@@ -38,24 +38,8 @@ public class LonelyTwitterActivity extends Activity {
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Cat cat = new Cat();
-				cat.setType("it's a cat");
-				cat.setFood("cat loves fish and blah blah");
-				Duck duck = new Duck();
-				duck.setType("it's a wild duck");
-				duck.setFood("Only fish");
-				DomestickDuck domestickDuck= new DomestickDuck();
-				domestickDuck.setType("it's a domestic duck");
-				domestickDuck.setFood("Fish and rice");
-
-
-
-				cat.swim();
-				domestickDuck.swim();
-				duck.swim();
-
-				domestickDuck.fly();
-				duck.fly();
+				String text=bodyText.getText().toString();
+				saveInFile(text, new Date(System.currentTimeMillis()));
 
 
 			}
