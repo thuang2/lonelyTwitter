@@ -6,12 +6,12 @@ public abstract class Tweet {
     protected String message;
     protected Date date;
 
-    public Tweet(String message){
+    public Tweet(){
         this.message=message;
-        this.date= new Date();
+        this.date= new Date(System.currentTimeMillis());
 
     }
-    public Tweet(String message,Date date){
+    public Tweet(String message){
         this.message=message;
         this.date=new Date();
     }
@@ -34,4 +34,8 @@ public abstract class Tweet {
         return this.message;
     }
     public abstract Boolean isImportant();
+
+    public String toString(){
+        return this.date.toString()+" | "+this.message;
+    }
 }
